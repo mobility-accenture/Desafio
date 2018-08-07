@@ -11,7 +11,7 @@ Deverá ter tratamento de cenários de erro (falha de conexão).
 O visual do aplicativo está em anexo no arquivo screens.png e os assets estão na pasta **Icons**.
 
 
-
+![Imagem](https://raw.githubusercontent.com/mobility-accenture/Desafio/master/app-screens.png)
 
 > ## Avaliação
 
@@ -24,8 +24,7 @@ Serão avaliados os seguintes pontos:
   
   - **Layout.**
   
-  - **Testes unitário. Você pode usar o que tiver mais experiência, só nos explique o que ele tem de bom.**
- 
+  - **Testes unitários  –  Será um diferencial. Você pode usar o que tiver mais experiência, só nos explique o que ele tem de bom.**
  
  
  
