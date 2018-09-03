@@ -12,6 +12,7 @@ import UIKit
 class Cart: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
     @IBOutlet weak var tableview: UITableView!
+    @IBOutlet weak var noItemsLB: UILabel!
     
     
     var listItemsInCart: [ItemCart] = []
@@ -42,7 +43,17 @@ class Cart: UIViewController, UITableViewDelegate, UITableViewDataSource{
     // TABLE VIEW //
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        if(self.listItemsInCart.count == 0){
+            tableview.isHidden = true
+            noItemsLB.isHidden = false
+        } else {
+            tableview.isHidden = false
+            noItemsLB.isHidden = true
+        }
+        
         return self.listItemsInCart.count
+        
     }
     
     
