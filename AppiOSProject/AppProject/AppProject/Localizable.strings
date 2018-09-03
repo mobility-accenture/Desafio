@@ -9,3 +9,16 @@
 erro_carregamento = "Não foi possível obter as informações. Por favor, tente novamente.";
 ok = "OK";
 nenhum_item = "Não há nenhum item disponível para pedido.";
+pequeno="Pequeno";
+medio="Médio";
+grande="Grande";
+um_torrao="Um torrão";
+dois_torroes="Dois Torrões";
+tres_torroes="Três Torrões";
+sem_acucar="Sem açúcar";
+chocolate="Chocolate";
+canela="Canela";
+chantilly="Chantilly";
+cafe="Café";
+leite="Leite";
+nenhum="Nenhum";

@@ -35,9 +35,9 @@ class ItemDetails: UIViewController {
     
     var item: ItemMenu?
     
-    var qtdTotal = 1
-    var itemSizeSelected = 0
-    var itemSugarSelected = 0
+    var qtdTotal:Int = 1
+    var itemSizeSelected:Int = 0
+    var itemSugarSelected:Int = 0
     var aditionalMilk = false
     var aditionalChocolate = false
     var aditionalCoffee = false
@@ -354,6 +354,9 @@ class ItemDetails: UIViewController {
         
         Globals.cartItems = itemsInCart
         
+        
+        let viewController = self.storyboard!.instantiateViewController(withIdentifier: "carrinho") as! Cart
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
     
    

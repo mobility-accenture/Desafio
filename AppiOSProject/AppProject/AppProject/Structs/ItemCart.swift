@@ -10,16 +10,16 @@ import Foundation
 
 class ItemCart: NSObject, NSCoding {
     
-    var title: String? = ""
-    var image: String? = ""
-    var size: Int? = 0
-    var sugar: Int? = 0
-    var addCoffee: Bool? = false
-    var addChocolate: Bool? = false
-    var addCream: Bool? = false
-    var addMilk: Bool? = false
-    var addCinnamon: Bool? = false
-    var quantity: Int? = 1
+    var title: String = ""
+    var image: String = ""
+    var size: Int = 0
+    var sugar: Int = 0
+    var addCoffee: Bool = false
+    var addChocolate: Bool = false
+    var addCream: Bool = false
+    var addMilk: Bool = false
+    var addCinnamon: Bool = false
+    var quantity: Int = 1
     
     
     
@@ -40,9 +40,9 @@ class ItemCart: NSObject, NSCoding {
     required convenience init(coder aDecoder: NSCoder) {
         let title = aDecoder.decodeObject(forKey: "title") as! String
         let image = aDecoder.decodeObject(forKey: "image") as! String
-        let size = aDecoder.decodeInteger(forKey: "size")
-        let sugar = aDecoder.decodeInteger(forKey: "sugar")
-        let quantity = aDecoder.decodeInteger(forKey: "quantity")
+        let size = aDecoder.decodeInt32(forKey: "size")
+        let sugar = aDecoder.decodeInt32(forKey: "sugar")
+        let quantity = aDecoder.decodeInt32(forKey: "quantity")
         let addCoffee = aDecoder.decodeBool(forKey: "addCoffee")
         let addChocolate = aDecoder.decodeBool(forKey: "addChocolate")
         let addCream = aDecoder.decodeBool(forKey: "addCream")
@@ -51,14 +51,14 @@ class ItemCart: NSObject, NSCoding {
         
         self.init(title: title,
                   image: image,
-                  size: size,
-                  sugar: sugar,
+                  size: Int(size),
+                  sugar: Int(sugar),
                   addCoffee: addCoffee,
                   addChocolate: addChocolate,
                   addCream: addCream,
                   addMilk: addMilk,
                   addCinnamon: addCinnamon,
-                  quantity: quantity
+                  quantity: Int(quantity)
         )
         
     }
