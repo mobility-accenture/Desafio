@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  AppProject
+
+  Created by Kaio Dantas on 03/09/2018.
+  Copyright © 2018 KaioDantas. All rights reserved.
+*/
+
+erro_carregamento = "Não foi possível obter as informações. Por favor, tente novamente.";
+ok = "OK";
