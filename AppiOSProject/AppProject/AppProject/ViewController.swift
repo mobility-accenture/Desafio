@@ -26,6 +26,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.refreshControl.addTarget(self, action: #selector(didPullToRefresh), for: .valueChanged)
         tableview.addSubview(self.refreshControl)
         
+        
+        checkCartItems()
+        
         conect()
     }
 
@@ -35,6 +38,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
 
 
+    
+    func checkCartItems(){
+        let userDefaults = UserDefaults.standard
+        
+        if let previouslyItems  = userDefaults.object(forKey: "cart"){
+            let decodedItems = NSKeyedUnarchiver.unarchiveObject(with: previouslyItems as! Data) as! [ItemCart]
+            Globals.cartItems = decodedItems
+        } else {
+            Globals.cartItems = []
+        }
+    }
     
     
     
@@ -66,11 +80,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        let event = self.menuList[indexPath.row]
+        let item = self.menuList[indexPath.row]
         
-//        let viewController = self.storyboard!.instantiateViewController(withIdentifier: "evento_detalhes") as! Evento_Detalhes_VC
-//        viewController.evento = event
-//        self.navigationController?.pushViewController(viewController, animated: true)
+        let viewController = self.storyboard!.instantiateViewController(withIdentifier: "item_details") as! ItemDetails
+        viewController.item = item
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
     
     
@@ -114,11 +128,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                         let list = try JSONDecoder().decode(Products.self, from: response.data!)
                         self.menuList = list.products!
                         
-//                        if(self.eventos_list.count > 0){
-//                            self.noEventsView.isHidden = true
-//                        } else {
-//                            self.noEventsView.isHidden = false
-//                        }
+                        if(self.menuList.count <= 0){
+                            self.showError(mensagem: NSLocalizedString("nenhum_item", comment: ""))
+                        }
                         self.tableview.reloadData()
 
 

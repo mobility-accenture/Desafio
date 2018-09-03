@@ -17,6 +17,9 @@
 		8446E90B213D901D00751C5B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8446E90A213D901D00751C5B /* Localizable.strings */; };
 		8446E90D213D90C900751C5B /* MyUIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8446E90C213D90C900751C5B /* MyUIAlertController.swift */; };
 		8446E910213D911B00751C5B /* ItemMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8446E90F213D911B00751C5B /* ItemMenu.swift */; };
+		8474C6D9213D9A820095AD07 /* ItemDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8474C6D8213D9A820095AD07 /* ItemDetails.swift */; };
+		8474C6DB213DB4660095AD07 /* ItemCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8474C6DA213DB4660095AD07 /* ItemCart.swift */; };
+		8474C6DF213DBCA00095AD07 /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8474C6DE213DBCA00095AD07 /* Cart.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +36,9 @@
 		8446E90A213D901D00751C5B /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		8446E90C213D90C900751C5B /* MyUIAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyUIAlertController.swift; sourceTree = "<group>"; };
 		8446E90F213D911B00751C5B /* ItemMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemMenu.swift; sourceTree = "<group>"; };
+		8474C6D8213D9A820095AD07 /* ItemDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetails.swift; sourceTree = "<group>"; };
+		8474C6DA213DB4660095AD07 /* ItemCart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCart.swift; sourceTree = "<group>"; };
+		8474C6DE213DBCA00095AD07 /* Cart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
 		95BCE574DCCFCC0DF0281732 /* Pods-AppProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-AppProject/Pods-AppProject.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -72,6 +78,8 @@
 				8446E8F6213D858200751C5B /* AppDelegate.swift */,
 				8446E8F8213D858200751C5B /* ViewController.swift */,
 				8446E908213D8C9000751C5B /* CellMenu.swift */,
+				8474C6D8213D9A820095AD07 /* ItemDetails.swift */,
+				8474C6DE213DBCA00095AD07 /* Cart.swift */,
 				8446E90E213D910300751C5B /* Structs */,
 				8446E8FA213D858200751C5B /* Main.storyboard */,
 				8446E8FD213D858300751C5B /* Assets.xcassets */,
@@ -87,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				8446E90F213D911B00751C5B /* ItemMenu.swift */,
+				8474C6DA213DB4660095AD07 /* ItemCart.swift */,
 			);
 			path = Structs;
 			sourceTree = "<group>";
@@ -186,12 +195,10 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-AppProject/Pods-AppProject-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -223,11 +230,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8474C6DB213DB4660095AD07 /* ItemCart.swift in Sources */,
 				8446E90D213D90C900751C5B /* MyUIAlertController.swift in Sources */,
 				8446E8F9213D858200751C5B /* ViewController.swift in Sources */,
 				8446E8F7213D858200751C5B /* AppDelegate.swift in Sources */,
+				8474C6D9213D9A820095AD07 /* ItemDetails.swift in Sources */,
 				8446E909213D8C9000751C5B /* CellMenu.swift in Sources */,
 				8446E910213D911B00751C5B /* ItemMenu.swift in Sources */,
+				8474C6DF213DBCA00095AD07 /* Cart.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

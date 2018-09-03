@@ -44,3 +44,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+
+
+
+
+
+
+struct Globals {
+    
+    static var cartItems: [ItemCart] = []
+
+}
