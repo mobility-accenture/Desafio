@@ -7,6 +7,7 @@
 */
 
 erro_carregamento = "Não foi possível obter as informações. Por favor, tente novamente.";
+erro_conexao = "Não foi possível obter as informações. Por favor, verifique sua conexão e tente novamente.";
 ok = "OK";
 nenhum_item = "Não há nenhum item disponível para pedido.";
 pequeno="Pequeno";

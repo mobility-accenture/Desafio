@@ -156,7 +156,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
                 } else {
                     //SE HOUVE ERRO
-                    self.showError(mensagem: NSLocalizedString("erro_carregamento", comment: ""))
+                    self.showError(mensagem: NSLocalizedString("erro_conexao", comment: ""))
                 }
 
         }
