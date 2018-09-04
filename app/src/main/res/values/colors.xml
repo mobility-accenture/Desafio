@@ -5,8 +5,13 @@
     <color name="colorAccent">#FF4081</color>
 
 
+
+
+    <color name="colorSeparator">#eeeae8</color>
     <color name="colorText">#8c746a</color>
     <color name="colorListText">#2d140d</color>
+    <color name="colorCartButton">#b98875</color>
+
 
 
 </resources>

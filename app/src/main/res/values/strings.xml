@@ -11,5 +11,11 @@
 
     <!--Details Activity-->
     <string name="details_text">Detalhes</string>
+    <string name="size_text">Tamanho</string>
+    <string name="sugar_text">Açúcar</string>
+    <string name="additional_text">Adicionais</string>
+    <string name="amount_text">Quantidade</string>
+    <string name="put_on_cart_text">Colocar no carrinho</string>
+
 
 </resources>
