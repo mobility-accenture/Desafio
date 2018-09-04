@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">CoffeeTEK</string>
+
+
+    <!--Home toolbar-->
+    <string name="shopping_cart_text">Carrinho</string>
+
+
+    <!--Home Activity-->
+    <string name="menu_text">Menu</string>
+
+    <!--Details Activity-->
+    <string name="details_text">Detalhes</string>
+
+</resources>
