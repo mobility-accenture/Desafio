@@ -10,19 +10,27 @@ public class Product {
     private Bitmap Image;
     private int Size;
     private int Sugar;
-    private List<String> Additional;
-    private int Quantity = 0;
+    private int Amount = 0;
+    private int Additional_Cream;
+    private int Additional_Chocolate;
+    private int Additional_Cinnamon;
+    private int Additional_Coffee;
+    private int Additional_Milk;
 
     public Product() {
     }
 
-    public Product(String title, Bitmap image, int size, int sugar, List<String> additional, int quantity) {
+    public Product(String title, Bitmap image, int size, int sugar, int amount, int additional_Cream, int additional_Chocolate, int additional_Cinnamon, int additional_Coffee, int additional_Milk) {
         Title = title;
         Image = image;
         Size = size;
         Sugar = sugar;
-        Additional = additional;
-        Quantity = quantity;
+        Amount = amount;
+        Additional_Cream = additional_Cream;
+        Additional_Chocolate = additional_Chocolate;
+        Additional_Cinnamon = additional_Cinnamon;
+        Additional_Coffee = additional_Coffee;
+        Additional_Milk = additional_Milk;
     }
 
     public String getTitle() {
@@ -57,19 +65,51 @@ public class Product {
         Sugar = sugar;
     }
 
-    public List<String> getAdditional() {
-        return Additional;
+    public int getAmount() {
+        return Amount;
     }
 
-    public void setAdditional(List<String> additional) {
-        Additional = additional;
+    public void setAmount(int amount) {
+        Amount = amount;
     }
 
-    public int getQuantity() {
-        return Quantity;
+    public int getAdditional_Cream() {
+        return Additional_Cream;
     }
 
-    public void setQuantity(int quantity) {
-        Quantity = quantity;
+    public void setAdditional_Cream(int additional_Cream) {
+        Additional_Cream = additional_Cream;
+    }
+
+    public int getAdditional_Chocolate() {
+        return Additional_Chocolate;
+    }
+
+    public void setAdditional_Chocolate(int additional_Chocolate) {
+        Additional_Chocolate = additional_Chocolate;
+    }
+
+    public int getAdditional_Cinnamon() {
+        return Additional_Cinnamon;
+    }
+
+    public void setAdditional_Cinnamon(int additional_Cinnamon) {
+        Additional_Cinnamon = additional_Cinnamon;
+    }
+
+    public int getAdditional_Coffee() {
+        return Additional_Coffee;
+    }
+
+    public void setAdditional_Coffee(int additional_Coffee) {
+        Additional_Coffee = additional_Coffee;
+    }
+
+    public int getAdditional_Milk() {
+        return Additional_Milk;
+    }
+
+    public void setAdditional_Milk(int additional_Milk) {
+        Additional_Milk = additional_Milk;
     }
 }

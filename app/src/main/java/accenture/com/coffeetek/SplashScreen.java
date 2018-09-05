@@ -5,17 +5,10 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 import android.util.Base64;
-import android.util.Log;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
-import android.widget.TextView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -24,47 +17,80 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
-import accenture.com.coffeetek.Adapter.HomeAdapter;
+import accenture.com.coffeetek.Interface.JsonAsyncResponse;
 import accenture.com.coffeetek.Model.Product;
 import accenture.com.coffeetek.Util.Common;
 import accenture.com.coffeetek.Util.JsonTask;
 import accenture.com.coffeetek.Util.NetworkUtils;
 
-public class Home extends AppCompatActivity {
+public class SplashScreen extends AppCompatActivity implements JsonAsyncResponse {
 
-    RecyclerView recyclerView;
-    RecyclerView.LayoutManager layoutManager;
-
-
-
-    HomeAdapter adapter;
+    JsonTask asyncTask = null;
+    private static int SPLASH_TIME_OUT = 3000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.activity_splash_screen);
+
+        //LoadProducts();
+
+        if(NetworkUtils.isNetworkConnected(this)){
+            String url = "https://desafio-mobility.herokuapp.com/products.json";
+            asyncTask = new JsonTask(this);
+            asyncTask.delegate = this;
+            asyncTask.execute(url);
+
+        }
+        else {
+
+            AlertDialog.Builder builder = new AlertDialog.Builder( SplashScreen.this );
+            if (getResources() != null){
+                builder.setTitle( getResources().getString(R.string.alert_title_text) );
+                builder.setMessage( getResources().getString(R.string.alert_message_text) );
+            }
+
+            builder.setPositiveButton(getResources().getString(R.string.ok_text), new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int id) {
+
+                    if(NetworkUtils.isNetworkConnected(SplashScreen.this)){
+                        String url = "https://desafio-mobility.herokuapp.com/products.json";
+                        asyncTask = new JsonTask(SplashScreen.this);
+                        asyncTask.delegate = SplashScreen.this;
+                        asyncTask.execute(url);
+                    }
+                    else{
+                        finish();
+                    }
 
 
+                }
+            });
+            builder.create().show();
 
-
-        LoadViews();
-
-        if ( Common.productList != null ){
-            adapter = new HomeAdapter( this, Common.productList );
-            recyclerView.setAdapter(adapter);
         }
 
 
     }
 
     @Override
-    protected void onResume() {
-        super.onResume();
+    public void processFinish(List<Product> productList) {
 
-        NetworkUtils.checkConection( Home.this, Home.this);
+        new Handler().postDelayed(new Runnable() {
+
+            @Override
+            public void run() {
+                // Esse método será executado sempre que o timer acabar
+                // E inicia a activity principal
+                Intent intent = new Intent( SplashScreen.this, Home.class );
+                startActivity(intent);
+
+                // Fecha esta activity
+                finish();
+            }
+        }, SPLASH_TIME_OUT);
 
     }
 
@@ -162,45 +188,6 @@ public class Home extends AppCompatActivity {
 
 
 
-    }
-
-    private void LoadViews() {
-
-        Toolbar toolbar = (Toolbar) findViewById(R.id.home_toolbar);
-        setSupportActionBar(toolbar);
-
-        if (getSupportActionBar() != null)
-            getSupportActionBar().setDisplayShowTitleEnabled(false);
-
-        TextView toolbarTitle = (TextView) toolbar.findViewById(R.id.toolbar_title);
-
-        if (getResources() != null)
-            toolbarTitle.setText(getResources().getString(R.string.menu_text));
-
-        recyclerView = (RecyclerView) findViewById( R.id.recycler_menu );
-        layoutManager = new LinearLayoutManager( Home.this );
-        recyclerView.setLayoutManager( layoutManager );
-
-
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater menuInflater = getMenuInflater();
-        menuInflater.inflate(R.menu.menu_home_toolbar, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-
-        int id = item.getItemId();
-
-        if (id == R.id.shopping_cart){
-            Intent intent = new Intent( Home.this, ShoppingCart.class );
-            startActivity(intent);
-        }
-        return super.onOptionsItemSelected(item);
     }
 
     public String loadJSONFromAsset() {

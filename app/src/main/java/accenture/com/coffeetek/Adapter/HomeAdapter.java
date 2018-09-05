@@ -8,13 +8,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
 import accenture.com.coffeetek.Details;
 import accenture.com.coffeetek.Interface.ItemClickListener;
-import accenture.com.coffeetek.Model.MenuItem;
 import accenture.com.coffeetek.Model.Product;
 import accenture.com.coffeetek.R;
 import accenture.com.coffeetek.ViewHolder.ShowHomeViewHolder;

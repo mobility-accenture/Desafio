@@ -7,5 +7,6 @@ import accenture.com.coffeetek.Model.Product;
 public class Common {
 
     public static List<Product> productList ;
+    public static List<Product> cartList ;
 
 }

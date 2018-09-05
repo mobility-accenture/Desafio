@@ -21,7 +21,7 @@
 
 
             <include
-                android:id="@+id/home_toolbar"
+                android:id="@+id/details_toolbar"
                 layout="@layout/toolbar"/>
 
 
@@ -34,6 +34,7 @@
                 >
 
                 <ImageView
+                    android:id="@+id/main_image_details"
                     android:layout_width="match_parent"
                     android:layout_height="70dp"
                     android:src="@drawable/espresso"
@@ -133,21 +134,24 @@
                                 android:gravity="center_vertical">
 
                                 <ImageView
+                                    android:id="@+id/small_cup"
                                     android:layout_width="36dp"
                                     android:layout_height="25dp"
-                                    android:src="@drawable/cup"
+                                    android:src="@drawable/cup_2"
                                     android:layout_weight="1"/>
 
                                 <ImageView
+                                    android:id="@+id/medium_cup"
                                     android:layout_width="36dp"
                                     android:layout_height="32dp"
-                                    android:src="@drawable/cup"
+                                    android:src="@drawable/cup_2"
                                     android:layout_weight="1"/>
 
                                 <ImageView
+                                    android:id="@+id/large_cup"
                                     android:layout_width="36dp"
                                     android:layout_height="40dp"
-                                    android:src="@drawable/cup"
+                                    android:src="@drawable/cup_2"
                                     android:layout_weight="1"/>
 
                                 <ImageView
@@ -199,27 +203,31 @@
                                 android:orientation="horizontal">
 
                                 <ImageView
+                                    android:id="@+id/no_sugar_details"
                                     android:layout_width="36dp"
                                     android:layout_height="25dp"
-                                    android:src="@drawable/no_sugar"
+                                    android:src="@drawable/no_sugar_unselected"
                                     android:layout_weight="1"/>
 
                                 <ImageView
+                                    android:id="@+id/sugar1_details"
                                     android:layout_width="36dp"
                                     android:layout_height="14dp"
-                                    android:src="@drawable/sugar1"
+                                    android:src="@drawable/sugar1_unselected"
                                     android:layout_weight="1"/>
 
                                 <ImageView
+                                    android:id="@+id/sugar2_details"
                                     android:layout_width="36dp"
                                     android:layout_height="19dp"
-                                    android:src="@drawable/sugar2"
+                                    android:src="@drawable/sugar2_unselected"
                                     android:layout_weight="1"/>
 
                                 <ImageView
+                                    android:id="@+id/sugar3_details"
                                     android:layout_width="36dp"
                                     android:layout_height="24dp"
-                                    android:src="@drawable/sugar3"
+                                    android:src="@drawable/sugar3_unselected"
                                     android:layout_weight="1"/>
 
                             </LinearLayout>
@@ -262,34 +270,39 @@
                                 android:orientation="horizontal">
 
                                 <ImageView
+                                    android:id="@+id/cream_details"
                                     android:layout_width="26dp"
                                     android:layout_height="24dp"
-                                    android:src="@drawable/cream"
+                                    android:src="@drawable/cream_unselected"
                                     android:layout_weight="1"/>
 
                                 <ImageView
+                                    android:id="@+id/chocolate_details"
                                     android:layout_width="26dp"
                                     android:layout_height="26dp"
-                                    android:src="@drawable/chocolate"
+                                    android:src="@drawable/chocolate_unselected"
                                     android:layout_weight="1"/>
 
                                 <ImageView
+                                    android:id="@+id/cinnamon_details"
                                     android:layout_width="26dp"
                                     android:layout_height="26dp"
-                                    android:src="@drawable/cinnamon"
+                                    android:src="@drawable/cinnamon_unselected"
                                     android:layout_weight="1"/>
 
                                 <ImageView
+                                    android:id="@+id/coffee_details"
                                     android:layout_marginTop="-3dp"
                                     android:layout_width="26dp"
                                     android:layout_height="26dp"
-                                    android:src="@drawable/coffe"
+                                    android:src="@drawable/coffee_unselected"
                                     android:layout_weight="1"/>
 
                                 <ImageView
+                                    android:id="@+id/milk_details"
                                     android:layout_width="26dp"
                                     android:layout_height="26dp"
-                                    android:src="@drawable/milk"
+                                    android:src="@drawable/milk_unselected"
                                     android:layout_weight="1"/>
 
                             </LinearLayout>
@@ -334,12 +347,14 @@
 
 
                                 <ImageView
+                                    android:id="@+id/subtract_details"
                                     android:layout_width="14dp"
                                     android:layout_height="2dp"
                                     android:src="@drawable/less"
                                     android:layout_weight="1"/>
 
                                 <TextView
+                                    android:id="@+id/amount_details"
                                     android:layout_width="1dp"
                                     android:layout_height="wrap_content"
                                     android:text="0"
@@ -349,6 +364,7 @@
                                     android:gravity="center_horizontal"/>
 
                                 <ImageView
+                                    android:id="@+id/add_details"
                                     android:layout_width="14dp"
                                     android:layout_height="14dp"
                                     android:src="@drawable/plus"
@@ -379,6 +395,8 @@
         </LinearLayout>
 
         <android.support.v7.widget.CardView
+
+            android:id="@+id/add_to_cart_button_details"
 
             android:layout_width="match_parent"
             android:layout_height="50dp"

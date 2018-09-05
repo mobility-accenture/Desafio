@@ -8,6 +8,11 @@
 
     <!--Home Activity-->
     <string name="menu_text">Menu</string>
+    <string name="cream_text">Chantilly</string>
+    <string name="chocolate_text">Chocolate</string>
+    <string name="cinnamon_text">Cinnamon</string>
+    <string name="coffee_text">Coffee</string>
+    <string name="milk_text">Milk</string>
 
     <!--Details Activity-->
     <string name="details_text">Detalhes</string>
@@ -16,6 +21,26 @@
     <string name="additional_text">Adicionais</string>
     <string name="amount_text">Quantidade</string>
     <string name="put_on_cart_text">Colocar no carrinho</string>
+    <string name="small_size_text">200 ML</string>
+    <string name="medium_size_text">350 ML</string>
+    <string name="large_size_text">500 ML</string>
+    <string name="title_activity_shopping_cart">ShoppingCart</string>
+    <string name="select_amount_text">Escolha pelo menos uma unidade</string>
+
+    <!--Shopping Cart Activity-->
+    <string name="cart_text">Carrinho</string>
+    <string name="product_cart_text">Produto: </string>
+    <string name="amount_cart_text">Quantidade: </string>
+    <string name="additional_cart_text">Adicionais: </string>
+    <string name="empty_cart_text">Você não possui nenhum produto dentro do seu carrinho.</string>
+
+    <!--SplashScreen Activity-->
+    <string name="alert_title_text">Atenção</string>
+    <string name="alert_message_text">Não há conexão com a internet. Favor Conectar. Caso nao se conecte, o app irá encerrar!</string>
+    <string name="ok_text">OK</string>
+
+    <!--JsonTask-->
+    <string name="wait_text">Por favor, aguarde...</string>
 
 
 </resources>
