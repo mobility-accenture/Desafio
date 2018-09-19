@@ -9,6 +9,7 @@ import { HomePage } from '../pages/home/home';
 import { CoffeeProvider } from '../providers/coffee/coffee';
 
 import { HttpClientModule } from '@angular/common/http';
+import { IonicStorageModule } from '@ionic/storage';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,11 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     HttpClientModule,
-    IonicModule.forRoot(MyApp)
+    IonicStorageModule.forRoot(),
+    IonicModule.forRoot(MyApp, {
+      backButtonText: '', 
+      backButtonIcon: 'ios-arrow-back',
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [

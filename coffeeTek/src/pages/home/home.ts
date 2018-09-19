@@ -11,9 +11,9 @@ export class HomePage {
   private availablesCoffees: any;
 
   constructor(public navCtrl: NavController, private coffeeProvider: CoffeeProvider) {
-    this.coffeeProvider.getCoffees().subscribe(coffees =>{
-      console.log(coffees);
-    },console.error);
+    // this.coffeeProvider.getCoffees().subscribe(coffees =>{
+    //   console.log(coffees);
+    // },console.error);
 
     this.availablesCoffees = {
       "products": [
@@ -65,6 +65,10 @@ export class HomePage {
         }
       ]
     }
+  }
+
+  private showDetails(coffe: any): void{
+    this.navCtrl.push('DetailsPage', coffe);
   }
 
 }
