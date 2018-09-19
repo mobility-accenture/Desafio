@@ -1,0 +1,17 @@
+page-details {
+    .card-thumb{
+        background-image: url('../assets/imgs/card-background.png');
+        //background-size: cover;
+        height: 25%;
+        margin: 0px;
+        width: 100%;
+    }
+
+    .image-thumb{
+        margin-left: auto; 
+        margin-right: auto; 
+        margin-top: 10%; 
+        display: block; 
+        width: 50px;
+    }
+}

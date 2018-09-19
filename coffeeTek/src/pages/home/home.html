@@ -1,0 +1,50 @@
+<ion-header no-border>
+  <ion-navbar>
+    <ion-grid>
+      <ion-row>
+        <ion-col col-10>
+          <ion-title style="margin-left: 50%">Menu</ion-title>
+        </ion-col>
+
+        <ion-col col-2 tappable (click)="navCtrl.push('ShoppingCartPage')">
+          <img style="margin-left: auto; margin-right: auto; display: block" src="assets/imgs/shopping-cart.png"/>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    
+    
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item *ngFor="let product of availablesCoffees.products" tappable (click)="showDetails(product)">
+      <ion-grid>
+        <ion-row>
+          <ion-col col-3>
+            <img [src]="product.image"/>
+          </ion-col>
+
+          <ion-col col-7>
+            <p style="font-size: 1.5em; color: #75605B; margin-top: 12%">{{product.title}}</p>
+          </ion-col>
+
+          <ion-col col-2>
+            <ion-icon style="margin-left: 50%; margin-top: 50%" ios="ios-arrow-forward" md="ios-arrow-forward"></ion-icon>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+  </ion-list>
+
+  <!-- <div *ngFor="let product of availablesCoffees.products">
+    <img [src]="product.image"/>
+    <P>{{product.size}}</P>
+  </div>
+
+  <button ion-item detail-none *ngFor="let product of availablesCoffees.products">
+    
+    <ion-label>{{product.title}}</ion-label>
+    <ion-icon ios="ios-arrow-forward" md="ios-arrow-forward" item-end></ion-icon>
+  </button> -->
+</ion-content>

@@ -1,0 +1,114 @@
+<ion-header no-border>
+  <ion-navbar>
+    <ion-title style="margin-left: 25%">Detalhes</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-card class="card-thumb">
+    <img [src]="coffee.image" class="image-thumb"/>
+  </ion-card>
+
+  <ion-list>
+    <ion-item>
+      <p style="font-size: 1.2em">{{coffee.title}}</p>
+      <p>200 ML</p>
+    </ion-item>
+
+    <ion-item>
+      <ion-grid>
+        <ion-row>
+
+          <ion-col col-4>
+            <p>Tamanho</p>
+          </ion-col>
+
+          <ion-col tappable (click)="selectSize('smallSize')">
+            <img style="height: 25px;" src="assets/imgs/cup.png" [ngStyle]="{'opacity': smallSize ? '1' : '0.5'}">
+          </ion-col>
+
+          <ion-col tappable (click)="selectSize('mediumSize')">
+            <img style="height: 35px;" src="assets/imgs/cup.png" [ngStyle]="{'opacity': mediumSize ? '1' : '0.5'}">
+          </ion-col>
+
+          <ion-col tappable (click)="selectSize('largeSize')">
+            <img style="height: 45px;" src="assets/imgs/cup.png" [ngStyle]="{'opacity': largeSize ? '1' : '0.5'}">
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+
+    <ion-item>
+      <ion-grid>
+        <ion-row>
+
+          <ion-col col-4>
+            <p>Açucar</p>
+          </ion-col>
+
+          <ion-col tappable (click)="selectSugar(0)">
+            <img style="width: 26px" src="assets/imgs/no-sugar.png" [ngStyle]="{'opacity': noSugar ? '1' : '0.5'}"/>
+          </ion-col>
+
+          <ion-col tappable (click)="selectSugar(1)">
+            <img style="width: 15px" src="assets/imgs/sugar1.png" [ngStyle]="{'opacity': oneSugar ? '1' : '0.5'}"/>
+          </ion-col>
+
+          <ion-col tappable (click)="selectSugar(2)">
+            <img style="width: 26px" src="assets/imgs/sugar2.png" [ngStyle]="{'opacity': twoSugar ? '1' : '0.5'}"/>
+          </ion-col>
+
+          <ion-col tappable (click)="selectSugar(3)">
+            <img style="width: 26px" src="assets/imgs/sugar3.png" [ngStyle]="{'opacity': threeSugar ? '1' : '0.5'}"/>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+
+    <ion-item>
+      <ion-grid>
+        <ion-row>
+
+          <ion-col col-4>
+            <p>Adicionais</p>
+          </ion-col>
+
+          <ion-col col-2 *ngFor="let additional of coffee.additional">
+            <img src="assets/imgs/{{additional}}.png" style="width: 26px"/>
+          </ion-col>
+
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+
+    <ion-item>
+      <ion-grid>
+        <ion-row>
+
+          <ion-col col-8>
+            <p>Quantidade</p>
+          </ion-col>
+
+          <ion-col tappable (click)="decreaseCount()">
+            <img src="assets/imgs/less.png" style="margin-bottom: 5%"/>
+          </ion-col>
+          
+          <ion-col>
+            {{count}}
+          </ion-col>
+
+          <ion-col tappable (click)="increaseCount()">
+            <img src="assets/imgs/plus.png"/>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      
+    </ion-item>
+  </ion-list>
+
+  <div style="margin-left: 10%">
+    <button ion-button color="cart-button" style="width: 90%; height: 40px;" (click)="addToCart()">Colocar no carrinho</button>
+  </div>
+  
+</ion-content>
