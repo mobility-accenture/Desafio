@@ -1,12 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the ShoppingCartPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { Storage } from '@ionic/storage';
 
 @IonicPage()
 @Component({
@@ -14,12 +8,18 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'shopping-cart.html',
 })
 export class ShoppingCartPage {
+  private selectedProducts = [];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage) {
+    this.storage.get('products').then(coffees =>{
+      if(coffees){
+        this.selectedProducts = coffees;
+        console.log(this.selectedProducts);
+      }
+      
+    })
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ShoppingCartPage');
-  }
+  ionViewDidLoad() {}
 
 }

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { CoffeeProvider } from '../../providers/coffee/coffee';
+import { ToastController } from 'ionic-angular';
 
 @Component({
   selector: 'page-home',
@@ -10,10 +11,13 @@ export class HomePage {
 
   private availablesCoffees: any;
 
-  constructor(public navCtrl: NavController, private coffeeProvider: CoffeeProvider) {
-    // this.coffeeProvider.getCoffees().subscribe(coffees =>{
-    //   console.log(coffees);
-    // },console.error);
+  constructor(public navCtrl: NavController, private coffeeProvider: CoffeeProvider, private toastCtrl: ToastController) {
+
+    // this.coffeeProvider.getCoffees().subscribe(coffees =>{ 
+    //   this.availablesCoffees = coffees;
+    // }, err =>{
+    //   this.showMessageToast('Ocorreu uma falha ao listar os produtos, tente novamente.');
+    // });
 
     this.availablesCoffees = {
       "products": [
@@ -69,6 +73,14 @@ export class HomePage {
 
   private showDetails(coffe: any): void{
     this.navCtrl.push('DetailsPage', coffe);
+  }
+
+  private showMessageToast(message: string, position?: string, duration?: number): void {
+    this.toastCtrl.create({
+      message: message,
+      position: position ? position : 'bottom',
+      duration: duration ? duration : 3000
+    })
   }
 
 }

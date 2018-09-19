@@ -1,4 +1,4 @@
-<ion-header>
+<ion-header no-border>
   <ion-navbar>
     <ion-title>Carrinho</ion-title>
   </ion-navbar>
@@ -6,5 +6,24 @@
 
 
 <ion-content padding>
+  <p *ngIf="selectedProducts.length < 1" style="text-align: center; color: #75605B">
+    Você não possui nenhum Produto<br>
+    no seu carrinho.
+  </p>
 
+  <ion-card *ngFor="let product of selectedProducts" style="background-color: #FAF9F8">
+    <ion-grid>
+      <ion-row>
+        <ion-col col-10>
+          <p>Produto: {{product.title}}</p>
+          <p>Quantidade: {{product.count}}</p>
+          <p>Adicionais: {{product.additional}}</p>
+        </ion-col>
+
+        <ion-col>
+          <img [src]="product.image">
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
 </ion-content>

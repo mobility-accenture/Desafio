@@ -1,12 +1,12 @@
 <ion-header no-border>
-  <ion-navbar color="light">
+  <ion-navbar>
     <ion-grid>
       <ion-row>
         <ion-col col-10>
           <ion-title style="margin-left: 50%">Menu</ion-title>
         </ion-col>
 
-        <ion-col col-2>
+        <ion-col col-2 tappable (click)="navCtrl.push('ShoppingCartPage')">
           <img style="margin-left: auto; margin-right: auto; display: block" src="assets/imgs/shopping-cart.png"/>
         </ion-col>
       </ion-row>

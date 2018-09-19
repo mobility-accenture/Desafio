@@ -24,16 +24,16 @@
             <p>Tamanho</p>
           </ion-col>
 
-          <ion-col>
-            <img style="height: 25px; opacity: 0.5;" src="assets/imgs/cup.png">
+          <ion-col tappable (click)="selectSize('smallSize')">
+            <img style="height: 25px;" src="assets/imgs/cup.png" [ngStyle]="{'opacity': smallSize ? '1' : '0.5'}">
           </ion-col>
 
-          <ion-col>
-            <img style="height: 35px;" src="assets/imgs/cup.png">
+          <ion-col tappable (click)="selectSize('mediumSize')">
+            <img style="height: 35px;" src="assets/imgs/cup.png" [ngStyle]="{'opacity': mediumSize ? '1' : '0.5'}">
           </ion-col>
 
-          <ion-col>
-            <img style="height: 45px;" src="assets/imgs/cup.png">
+          <ion-col tappable (click)="selectSize('largeSize')">
+            <img style="height: 45px;" src="assets/imgs/cup.png" [ngStyle]="{'opacity': largeSize ? '1' : '0.5'}">
           </ion-col>
         </ion-row>
       </ion-grid>
@@ -47,20 +47,20 @@
             <p>Açucar</p>
           </ion-col>
 
-          <ion-col>
-            <img style="width: 26px" src="assets/imgs/no-sugar.png" />
+          <ion-col tappable (click)="selectSugar(0)">
+            <img style="width: 26px" src="assets/imgs/no-sugar.png" [ngStyle]="{'opacity': noSugar ? '1' : '0.5'}"/>
           </ion-col>
 
-          <ion-col>
-            <img style="width: 15px" src="assets/imgs/sugar1.png" />
+          <ion-col tappable (click)="selectSugar(1)">
+            <img style="width: 15px" src="assets/imgs/sugar1.png" [ngStyle]="{'opacity': oneSugar ? '1' : '0.5'}"/>
           </ion-col>
 
-          <ion-col>
-            <img style="width: 26px" src="assets/imgs/sugar2.png" />
+          <ion-col tappable (click)="selectSugar(2)">
+            <img style="width: 26px" src="assets/imgs/sugar2.png" [ngStyle]="{'opacity': twoSugar ? '1' : '0.5'}"/>
           </ion-col>
 
-          <ion-col>
-            <img style="width: 26px" src="assets/imgs/sugar3.png" />
+          <ion-col tappable (click)="selectSugar(3)">
+            <img style="width: 26px" src="assets/imgs/sugar3.png" [ngStyle]="{'opacity': threeSugar ? '1' : '0.5'}"/>
           </ion-col>
         </ion-row>
       </ion-grid>
@@ -108,7 +108,7 @@
   </ion-list>
 
   <div style="margin-left: 10%">
-    <button ion-button color="primary" style="width: 300px; border-radius: 5%; height: 40px;" (click)="addToCart()">Colocar no carrinho</button>
+    <button ion-button color="cart-button" style="width: 90%; height: 40px;" (click)="addToCart()">Colocar no carrinho</button>
   </div>
   
 </ion-content>
